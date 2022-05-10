@@ -1,0 +1,308 @@
+/*/////////////////////////////////////Generaless//////////////////*/
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --Letras1: rgb(103, 103, 103);
+    --Letras2: #fff;
+    --Letras3: rgb(52, 52, 52);
+    /* --GradHeader: linear-gradient(90deg, rgba(37,59,36,1) 0%, rgba(4,13,54,1) 100%); */
+    --GradHeader: linear-gradient(90deg, rgb(174, 255, 170) 0%, rgb(163, 227, 255) 100%);
+    /*GH: background: rgb(34,61,108);background: -moz-linear-gradient(90deg, rgba(34,61,108,1) 0%, rgba(47,5,80,1) 100%);background: -webkit-linear-gradient(90deg, rgba(34,61,108,1) 0%, rgba(47,5,80,1) 100%);background: linear-gradient(90deg, rgba(34,61,108,1) 0%, rgba(47,5,80,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#223d6c",endColorstr="#2f0550",GradientType=1);*/
+    --GradBody: linear-gradient(180deg, rgb(219, 219, 219) 0%, rgb(218, 218, 218) 100%);
+    --ShadowHeader: box-shadow: 0px 10px 20px -4px rgba(114,230,110,1);
+    --FondoNotificaciones: #ccc;
+    --DegradadoRojoOscuro: linear-gradient(90deg, rgb(49, 9, 9) 0%, rgb(34, 2, 2)0%);
+    --DegradadoAmarilloOscuro: linear-gradient(90deg, rgb(51, 51, 10) 0%, rgb(26, 25, 2)100%);
+    --DegradadoVerdeOscuro: linear-gradient(90deg, rgb(9, 44, 11) 0%, rgb(6, 28, 2)00%);
+    --FondoRojoSuave: rgb(255, 182, 182);
+    --FondoRojoIntenso: rgb(255, 103, 103);
+    --FondoAmarilloSuave: rgb(253, 246, 157);
+    --FondoAmarrilloIntenso: rgb(255, 233, 65);
+    --FondoVerdeSuave: rgb(188, 255, 188);
+    --FondoVerdeIntenso: rgb(129, 255, 136);
+    --FondoAzulSuave: rgb(158, 245, 255);
+    --FondoAzulIntenso: rgb(93, 239, 255);
+    --BodyBackground: rgb(255, 255, 255);
+    --FondoPanelesGenerales: rgb(245, 245, 245);
+    --SombraPanelGeneral: 0px 0px 10px -4px rgba(0,0,0,0.3);
+    --SombraPanelChica: 3px 3px 10px -4px rgba(0,0,0,0.3);
+}
+.contenedor{
+    max-width: 1600px;
+    max-height: 100%;
+    margin: 0 auto;
+}
+.contenedor2{
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+}
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: var(--BodyBackground);
+    min-height: 100vh;
+}
+
+/*/////////////////////////////////////Header/////////////////////////////////*/
+header{
+    background: var(--GradHeader);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    box-shadow: 0px 5px 20px -4px rgba(0,0,0,0.3);
+}
+header div{
+    display: flex;
+    padding: 0.3rem 0;
+    width: 1200px;
+    align-items: center; 
+}
+header img{
+    width: 15%;
+}
+header div nav{
+    margin-left: auto;
+}
+header div nav ul{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+header div nav ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    color:var(--Letras3);
+    padding:1rem 0.8rem;
+    border-radius:3px;
+    transition: all 0.3s ease-in-out;
+}
+header div nav ul li:hover {
+    background-color: rgb(186, 255, 190);
+}
+header div nav ul li:hover > p{
+    opacity: 1;
+}
+header div nav ul li:hover > a{
+    opacity: 1;
+    transform: translateY(0);
+}
+header div nav ul li p{
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease-in-out;
+}
+header div nav ul a{
+    text-decoration: none;
+    color:black;
+    transform: translateY(80%);
+    transition: all 0.3s ease-in-out;
+    color:var(--Letras3);
+}
+
+li.pagina-activa a{
+    color:rgb(0, 128, 32);
+}
+
+li.pagina-activa p{
+    color:rgb(0, 128, 32);
+}
+/*/////////////////////////////////////Main/////////////////////////////////*/
+section.general-panel-user{
+    margin-top:2.5rem;
+    padding:0.2rem 1rem;
+}
+section.general-panel-user h3{
+    margin: 0 auto 2.5rem auto;
+    color:var(--Letras1);
+}
+
+section.general-panel-user h3 i{
+    margin-right: 1rem;
+}
+
+section div.content-panel-user{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    column-gap: 0.5rem;
+}
+
+section div.content-panel-user div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--FondoPanelesGenerales);
+}
+
+section div.content-panel-user div.notifications{
+    grid-column: 1/3;
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    align-items: center;
+    margin-bottom:0.5rem;
+    box-shadow: var(--SombraPanelGeneral);
+}
+
+div.notifications h4{
+    color:var(--Letras1);
+}
+
+section div.content-panel-user div.notifications div{
+    margin-top: 1rem;
+    border-radius:5px;
+    padding:0.2rem 0.2rem;
+    flex-direction: column;
+    width: 98%;
+    text-align: left;
+    padding: 0.5rem 0.5rem;
+    background-color: var(--FondoAzulSuave);
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--SombraPanelChica);
+}
+
+div.notificacion-user p{
+    color:var(--Letras1);
+}
+
+div.notificacion-user i{
+    color: var(--Letras1);
+    margin-right: 0.5rem;
+}
+
+section div.content-panel-user div.notifications div:hover{
+    background-color: var(--FondoAzulIntenso);
+    cursor: pointer;
+}
+
+section div.content-panel-user div.homework{
+    grid-column: 1/3;
+    grid-row: 3/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    align-items: center;
+    margin-bottom:0.5rem;
+    box-shadow: var(--SombraPanelGeneral);
+}
+
+div.homework h4{
+    color:var(--Letras1);
+}
+
+section div.content-panel-user div.homework div{
+    margin-top: 1rem;
+    border-radius:5px;
+    padding:0.2rem 0.2rem;
+    flex-direction: column;
+    width: 98%;
+    text-align: left;
+    padding: 0.5rem 0.5rem;
+    background-color: var(--FondoAzulSuave);
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--SombraPanelChica);
+}
+
+div.asignacion-user p{
+    color: var(--Letras1);
+}
+
+div.asignacion-user i{
+    margin-right: 0.5rem;
+    color:var(--Letras1);
+}
+
+section div.content-panel-user div.homework div:hover{
+    background-color: var(--FondoAzulIntenso);
+    cursor: pointer;
+}
+
+section div.content-panel-user div.news{
+    grid-column: 3/7;
+    grid-row: 1/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    align-items: center;
+    margin-bottom:0.5rem;
+    box-shadow: var(--SombraPanelGeneral);
+}
+
+div.news h4{
+    color:var(--Letras1);
+}
+
+section div.content-panel-user div.news div{
+    margin-top: 1rem;
+    border-radius:5px;
+    padding:0.2rem 0.2rem;
+    flex-direction: column;
+    width: 90%;
+    text-align: left;
+    padding: 0.5rem 0.5rem;
+    box-shadow: var(--SombraPanelChica);  
+}
+
+section div.content-panel-user div.news div{
+    cursor: pointer;
+}
+
+section div.content-panel-user div.news div.urgente{
+    background: var(--FondoRojoSuave);
+    transition: all 0.3s ease-in-out;
+}
+
+section div.content-panel-user div.news div.urgente:hover{
+    background: var(--FondoRojoIntenso);
+}
+
+section div.content-panel-user div.news div.importante{
+    background: var(--FondoAmarilloSuave);
+    transition: all 0.3s ease-in-out;
+}
+
+section div.content-panel-user div.news div.importante:hover{
+    background: var(--FondoAmarrilloIntenso);
+}
+
+section div.content-panel-user div.news div.considerar{
+    background: var(--FondoVerdeSuave);
+    transition: all 0.3s ease-in-out;
+}
+
+section div.content-panel-user div.news div.considerar:hover{
+    background: var(--FondoVerdeIntenso);
+}
+
+div.aviso-user h5{
+    text-transform: uppercase;
+    margin: 0 auto 1rem auto;
+    color: var(--Letras1);
+}
+
+div.aviso-user p{
+    margin-bottom: 0.9rem;
+    color: var(--Letras1);
+}
+div.aviso-user p i{
+    margin-right: 0.3rem;
+    color: var(--Letras1);
+}
