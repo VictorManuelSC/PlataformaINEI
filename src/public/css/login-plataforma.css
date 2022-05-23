@@ -1,0 +1,131 @@
+:root{
+    --degradado: linear-gradient(to right, #045b9c, #14b8d0);
+    --degradadoGris: linear-gradient(to bottom,#14b8d0,#148fa1);
+    --textColorMenu: rgb(255, 255, 255);
+}
+html {
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    /* background-color:rgb(58, 23, 23); */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    background: var(--degradado);
+    position: relative;
+}
+/*Estilos de animaciones*/
+@keyframes Spiner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes Aparecer{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.spinner{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-top: 4px solid orange;
+    border-right: 4px solid orange;
+    border-bottom: 4px solid orange;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease-in-out;
+    animation: Spiner 1s linear infinite;
+    z-index: 11;
+}
+.pantalla-spinner{
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    background-color: rgba(47, 47, 47, 0.164);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+.pantalla-carga{
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    /* background-color: rgba(255, 255, 255, 0.993); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+.aparecer{
+  animation: Aparecer 1.5s alternate;
+}
+.desaparecer{
+  animation: Aparecer 0.3s alternate-reverse;
+}
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#formulario-login{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: #fff;
+    margin-top:2em;
+    padding:2em;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    height: 400px;
+}
+#formulario-login h3{
+    margin: 0 0 1em 0;
+}
+#formulario-login label{
+    color: #000;
+    margin-bottom:0.6em;
+    font-size:1.1em;
+}
+#formulario-login input:nth-of-type(1){
+    margin-bottom: 1.2em;
+    font-size:1.1em;
+}
+#formulario-login div.div-input-password{
+    position: relative;
+    margin-bottom:0.5em;
+}
+#formulario-login div.div-input-password input{
+    width: 100%;
+}
+#formulario-login div.div-input-password i{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+#formulario-login div.div-input-password i:hover{
+    cursor:pointer;
+}
+#button-enviar{
+    margin-bottom:0.9em;
+}
+div.opciones-login{
+    display: flex;
+    justify-content: space-between;
+}
